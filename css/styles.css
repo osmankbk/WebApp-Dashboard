@@ -1,0 +1,81 @@
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+
+* {
+    font-family: 'Lato', sans-serif;
+    color: #777;
+    box-sizing: border-box;
+  }
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: thistle; 
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+
+/* ============================================= */
+/*              Header styles                      */
+/* ============================================= */
+
+.appNicon {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    justify-content: space-between;
+}
+
+.bell {
+    width: 20px;
+    height: 20px;
+    /* margin-left: 1000px; */
+}
+
+.nameNavatar{
+   
+    display: flex;
+    width: 250px;
+    align-items: center;
+    border-left: solid 1px black;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* margin-right: 20px;
+    padding-left: 20px; */
+
+}
+
+#avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* margin-right: 20px; */
+}
+
+
+/* ============================================= */
+/*              Navigation styles                      */
+/* ============================================= */
+
+.dashboard,
+.members,
+.visits,
+.settings {
+    width: 20px;
+    height: 20px;
+}
+
+.side-nav nav {
+    display: grid;
+    padding-top:  15px;
+    justify-content: center;
+    grid-gap: 20px;
+    background-color: turquoise;
+  
+}
