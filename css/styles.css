@@ -23,6 +23,12 @@ header {
 /*              Header styles                      */
 /* ============================================= */
 
+header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    /* grid-area: header; */
+}
+
 .appNicon {
     display: flex;
     align-items: center;
@@ -35,7 +41,6 @@ header {
 .bell {
     width: 20px;
     height: 20px;
-    /* margin-left: 1000px; */
 }
 
 .nameNavatar{
@@ -46,21 +51,17 @@ header {
     border-left: solid 1px black;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* margin-right: 20px;
-    padding-left: 20px; */
-
 }
 
 #avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    /* margin-right: 20px; */
 }
 
 
 /* ============================================= */
-/*              Navigation styles                      */
+/*              Navigation styles                */
 /* ============================================= */
 
 .dashboard,
@@ -71,11 +72,44 @@ header {
     height: 20px;
 }
 
-.side-nav nav {
+.sidebar-div {
+    grid-column-start: -2;
+    grid-column-end: -3;
+    /* grid-area: sidebar; */
+}
+
+.sidebar-nav {
     display: grid;
     padding-top:  15px;
     justify-content: center;
     grid-gap: 20px;
     background-color: rgb(151, 78, 151);
   
+}
+
+
+/* ============================================= */
+/*              Navigation styles                */
+/* ============================================= */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    /* grid-template-areas: 
+        "header header"
+        "sidebar main-content"
+       
+    ; */
+}
+
+
+.main-content {
+
+    /* grid-area: main-content; */
+    border: solid red 1px;
+}
+
+.search-div {
+    border: solid red 1px;
 }
