@@ -26,8 +26,7 @@ header {
     background-color: rgb(233, 186, 233); 
     align-items: center;
     justify-content: space-between;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area: header;
 }
 
 .appNicon {
@@ -82,8 +81,7 @@ header {
     padding-top: 10px;
     justify-content: center;
     grid-gap: 35px;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area: sidebar;
     background-color: rgb(151, 78, 151);
 }
 
@@ -94,21 +92,30 @@ header {
 
 .container {
     display: grid;
-    /* grid-template-columns: 2fr 2fr; */
-    grid-template-rows: repeat(2, 1fr) 18fr;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "sidebar"
+        "main-content";
 }
 
-
 .main-content {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    display: grid;
+    grid-area: main-content;
    background-color: paleturquoise;
 }
 
-.header-search{
-
+.twitter-logo,
+.google-logo {
+    width: 2em;
+    height: 2em;
 }
 
+.facebook-logo {
+    width: 3em;
+    height: 3em;
+}
 
 /* ============================================= */
 /*              Media Quaries styles             */
@@ -154,14 +161,15 @@ header {
     }
 
     .main-content {
-        grid-column-start: 2;
-        grid-column-end: 3;
+
+        
     } 
 
 .container {
-        display: grid;
-        grid-template-columns: .5fr 10fr;
-        grid-template-rows: 1fr 10fr;
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+            "header header"
+            "sidebar main-content";
     }
 }
 
