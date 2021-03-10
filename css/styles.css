@@ -95,18 +95,18 @@ header {
 .container {
     display: grid;
     /* grid-template-columns: 2fr 2fr; */
-    grid-template-rows: repeat(2, 1fr) 14.6fr;
+    grid-template-rows: repeat(2, 1fr) 18fr;
 }
 
 
 .main-content {
     grid-column-start: 1;
     grid-column-end: 3;
-   background-color: tomato;
+   background-color: paleturquoise;
 }
 
 .header-search{
-    border: solid red 1px;
+
 }
 
 
