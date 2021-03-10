@@ -21,8 +21,6 @@ header {
     justify-content: space-between;
     grid-column-start: 1;
     grid-column-end: 3;
-    /* grid-area: header; */
-
 }
 
 .appNicon {
@@ -61,8 +59,6 @@ header {
 }
 
 #avatar {
-    /* width: 50px;
-    height: 50px; */
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -77,24 +73,19 @@ header {
 .members,
 .visits,
 .settings {
-    width: 10px;
-    height: 10px;
-}
-
-.sidebar-div {
-    grid-column-start: -2;
-    grid-column-end: -3;
-    background-color: rgb(151, 78, 151);
-    /* grid-area: sidebar; */
+    width: 20px;
+    height: 20px;
 }
 
 .sidebar-nav {
     display: grid;
-    padding-top:  15px;
+    grid-template-columns: repeat(4, auto);
+    padding-top: 10px;
     justify-content: center;
-    grid-gap: 20px;
+    grid-gap: 35px;
+    grid-column-start: 1;
+    grid-column-end: 3;
     background-color: rgb(151, 78, 151);
-  
 }
 
 
@@ -104,21 +95,14 @@ header {
 
 .container {
     display: grid;
-
-    grid-template-columns: .5fr 10fr;
-    grid-template-rows: 1fr 10fr;
-   
-    /* grid-template-areas: 
-        "header header"
-        "sidebar main-content"
-       
-    ; */
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: repeat(2, 1fr) 14.6fr;
 }
 
 
 .main-content {
-
-    /* grid-area: main-content; */
+    grid-column-start: 1;
+    grid-column-end: 3;
    background-color: tomato;
 }
 
@@ -143,12 +127,11 @@ header {
     }
 
     .appNicon h1 {
-        font-size: larger;
+        font-size: x-large;
     }
 
     .nameNavatar {
         width: 200px;
-    
     }
 
     #avatar {
@@ -156,29 +139,41 @@ header {
         height: 40px;
         border-radius: 50%;
     }
-
     .nameNavatar h3 {
         font-size: large;
     }
 
-    .dashboard,
-    .members,
-    .visits,
-    .settings {
-        width: 20px;
-        height: 20px;
-    }   
+    .sidebar-nav {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, 50px);
+        justify-content: center;
+        grid-gap: 20px;
+        grid-column-start: -2;
+        grid-column-end: -3;
+        background-color: rgb(151, 78, 151);
+    }
+
+    .main-content {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    } 
+
+.container {
+        display: grid;
+        grid-template-columns: .5fr 10fr;
+        grid-template-rows: 1fr 10fr;
+    }
 }
 
 @media (min-width: 1024px) {
-
     header {
         padding-top: 10px;
         padding-bottom: 10px;
     }
 
     .appNicon {
-        width: 75%;
+        width: 85%;
     }
 
     .appNicon h1 {
@@ -191,8 +186,8 @@ header {
     }
 
     #avatar {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
     }
 
@@ -200,11 +195,10 @@ header {
         font-size: large;
     }
 
-    .dashboard,
-    .members,
-    .visits,
-    .settings {
-        width: 20px;
-        height: 20px;
+    .sidebar-nav {
+    display: grid;
+    justify-content: center;
+    grid-gap: 20px;
+    background-color: rgb(151, 78, 151);
     }
 }
