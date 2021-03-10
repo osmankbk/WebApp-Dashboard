@@ -8,6 +8,13 @@
     box-sizing: border-box;
   }
 
+  .appNicon h1 {
+    font-size: large;
+}
+
+.nameNavatar h3 {
+    font-size: small;
+}
 
 /* ============================================= */
 /*              Header styles                      */
@@ -33,10 +40,6 @@ header {
     justify-content: space-between;
 }
 
-.appNicon h1 {
-    font-size: large;
-}
-
 
 .bell {
     width: 20px;
@@ -52,10 +55,6 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
 
-}
-
-.nameNavatar h3 {
-    font-size: small;
 }
 
 #avatar {
@@ -95,7 +94,7 @@ header {
 
 .container {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    /* grid-template-columns: 2fr 2fr; */
     grid-template-rows: repeat(2, 1fr) 14.6fr;
 }
 
