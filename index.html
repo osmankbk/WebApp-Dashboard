@@ -176,11 +176,25 @@
                 </section>
                 <section class="message">
                     <h3>MESSAGE USER</h3>
-                    <form>
+                    <form class="message-container">
                         <input type="text" placeholder="search for user" class="message-form" id="message-form">
                         <textarea placeholder="Message for user" class="message-area" id="message-area"></textarea>
-                        <button class="message-button" id="send"></button>
+                        <button class="message-button" id="send">Send</button>
                     </form>
+                </section>
+                <section>
+                    <h3>SETTINGS</h3>
+                    <! -- custom toggle -->
+                    <! -- custome toggle -->
+                    <select name="message-form" id="timezone">
+                        <option disabled selected>Select a Timezone</option>
+                        <option >Eastern</option>
+                        <option >Western</option>
+                    </select>
+                    <div class=settings-button-div>
+                        <button class="save">Save</button>
+                        <button class="cancle">Cancle</button>
+                    </div>
                 </section>
             </main>
          </div>
