@@ -5,7 +5,6 @@
         <link rel="stylesheet" href="css/normalize.css">
         <title>WebApp Dashboard</title>
         <link rel="stylesheet" href="css/styles.css">
-
     </head>
     <body>
         <div class="container">
@@ -21,9 +20,8 @@
                 <h3>Osman Kamara</h3>
             </div>
         </header>
-       
             <nav class="sidebar-nav">
-                 <a href="#">
+                <a href="#">
                     <img class="dashboard" src="icons/icon-dashboards.svg">
                 </a>
 
@@ -37,13 +35,33 @@
                 <a href="#">
                     <img class="settings" src="icons/icon-settings.svg">
                 </a>
-            </nav>
-     
+            </nav>     
         <main class="main-content">
-            <h2>Dashboard</h2>
-            <div class="search-div">
-                <input type="search" placeholder="Search">
+            <div class="main-header">
+                <h2 class="headline">Dashboard</h2>
+                <div class="header-search">
+                    <input type="search" placeholder="Search...">
+                </div>
             </div>
+            <div class="alert" id="alert">
+
+            </div>
+            <section class="traffic">
+                <div class="traffic-header">
+                    <h3>Traffic</h3>
+                        <ul class="traffic-nav">
+                            <li class="hourly">Hourly</li>
+                            <li class="daily">Daily</li>
+                            <li class="weekly">Weekly</li>
+                            <li class="monthly">Monthly</li>
+                        </ul>
+                </div>
+                <div class="traffic-widget-container">
+
+                    <canvas id="traffic-chart"></canvas>
+                </div>
+               
+            </section>
         </main>
          </div>
     </body>
