@@ -145,10 +145,10 @@ header {
 /* ============================================= */
 /*              Traffic Section styles           */
 /* ============================================= */
-.traffic {
+/* .traffic {
     display: grid;
-    grid-column: 1 / span 1;
-}
+    grid-column: 1 / span 2;
+} */
 
 .traffic-header {
     display: grid;
@@ -156,6 +156,7 @@ header {
 }
 
 .traffic-header h3 {
+    color: rgb(233, 186, 233);
     margin-left: 1em;
 }
 
@@ -165,6 +166,7 @@ header {
 }
 
 .traffic-nav li {
+    color: purple;
     font-size: smaller;
     width: 4em;
     list-style: none;
@@ -247,6 +249,11 @@ header {
 
     .traffic{
         grid-column-gap: 1 / span 2;
+    }
+
+    .traffic-nav li {
+        font-size: large;
+        padding-bottom: 5px;
     }
 
     .widget-container-full, 
