@@ -3,6 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
         <title>WebApp Dashboard</title>
         <link rel="stylesheet" href="css/styles.css">
     </head>
@@ -37,7 +38,7 @@
             <main class="main-content">
                 <div class="main-header">
                     <h2 class="headline">Dashboard</h2>
-                    <div class="header-search">
+                    <div class="header-search-div">
                         <input type="search" placeholder="Search...">
                     </div>
                 </div>
@@ -46,7 +47,7 @@
                 </div>
                 <section class="traffic">
                     <div class="traffic-header">
-                        <h3>Traffic</h3>
+                        <h3>TRAFFIC</h3>
                             <ul class="traffic-nav">
                                 <li class="hourly">Hourly</li>
                                 <li class="daily">Daily</li>
@@ -54,7 +55,7 @@
                                 <li class="monthly">Monthly</li>
                             </ul>
                     </div>
-                    <div class="traffic-widget-container">
+                    <div class="widget-container-full">
                         <canvas id="traffic-chart">
 
                         </canvas>
@@ -63,8 +64,8 @@
                 <section class="daily">
                     <h3>DAILY TRAFFIC</h3>
 
-                    <div class="daily-widget-container">
-                        <canvas class="bar-chart">
+                    <div class="widget-container-half">
+                        <canvas class="daily-chart">
 
                         </canvas>
                     </div>
@@ -198,5 +199,9 @@
                 </section>
             </main>
          </div>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" 
+         integrity="sha512-hZf9Qhp3rlDJBvAKvmiG+goaaKRZA6LKUO35oK6EsM0/kjPK32Yw7URqrq3Q+Nvbbt8Usss+IekL7CRn83dYmw==" 
+         crossorigin="anonymous"></script>
+         <script src="js/app.js"></script>
     </body>
 </html>
