@@ -150,14 +150,12 @@ header {
     }
 
     .sidebar-nav {
-        display: grid;
         grid-template-columns: auto;
         grid-template-rows: repeat(4, 50px);
         justify-content: center;
         grid-gap: 20px;
         grid-column-start: -2;
         grid-column-end: -3;
-        background-color: rgb(151, 78, 151);
     }
 
     .main-content {
@@ -183,10 +181,6 @@ header {
         width: 85%;
     }
 
-    .appNicon h1 {
-        font-size: x-large;
-    }
-
     .nameNavatar {
         width: 210px;
        
@@ -198,14 +192,4 @@ header {
         border-radius: 50%;
     }
 
-    .nameNavatar h3 {
-        font-size: large;
-    }
-
-    .sidebar-nav {
-    display: grid;
-    justify-content: center;
-    grid-gap: 20px;
-    background-color: rgb(151, 78, 151);
-    }
 }
