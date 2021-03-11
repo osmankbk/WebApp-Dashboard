@@ -4,7 +4,7 @@
 
 * {
     font-family: 'Lato', sans-serif;
-    color: white;
+    color: black;
     box-sizing: border-box;
   }
 
@@ -140,6 +140,15 @@ header {
     padding-left: 10px;
 }
 
+.widget-container-full {
+    width: 95vw;
+    margin: auto;
+
+}
+#traffic-chart {
+    margin: auto;
+}
+
 
 
 /* ============================================= */
@@ -247,8 +256,21 @@ header {
         grid-template-columns: 1fr;    
     } 
 
-    .traffic{
-        grid-column-gap: 1 / span 2;
+    .traffic,
+    .social-status{
+        grid-column: 1 / span 2;
+    }
+
+    .daily,
+    .new-members,
+    .message {
+        grid-column: 1 / span 1;
+    }
+
+    .mobile-users,
+    .recent-activity,
+    .settings {
+        grid-column: 2 / span 1;
     }
 
     .traffic-nav li {
@@ -256,9 +278,12 @@ header {
         padding-bottom: 5px;
     }
 
-    .widget-container-full, 
-    .widget-container-half {
+    .widget-container-full {
         width: 90vw;
+    }
+
+    .widget-container-half {
+        width: 45vw;
     }
 
     .widget-container-half {
