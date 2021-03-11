@@ -4,7 +4,7 @@
 
 * {
     font-family: 'Lato', sans-serif;
-    color: #777;
+    color: white;
     box-sizing: border-box;
   }
 
@@ -103,7 +103,83 @@ header {
 .main-content {
     display: grid;
     grid-area: main-content;
-   background-color: paleturquoise;
+   /* background-color: paleturquoise; */
+}
+
+.main-header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+.headline {
+    color: purple;
+    padding-left: 10px;
+}
+
+.header-search-div {
+    background-color: lightgray;
+}
+.header-search-div input {
+    margin: 18px 0 10px 46%;
+    width: 50%;
+    border-radius: 5px;
+    outline: none;
+}
+
+.alert {
+    background-color: purple;
+    width: 95%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.alert-banner {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+
+/* ============================================= */
+/*              Traffic Section styles           */
+/* ============================================= */
+.traffic {
+    display: grid;
+    grid-column: 1 / span 1;
+}
+
+.traffic-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.traffic-header h3 {
+    margin-left: 1em;
+}
+
+.traffic-nav {   
+    display: flex;
+    justify-content: space-around;
+}
+
+.traffic-nav li {
+    font-size: smaller;
+    width: 4em;
+    list-style: none;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 8px;
+}
+
+.traffic-nav li:hover{
+    background-color: violet;
+}
+
+.widget-container-full, 
+.widget-container-half {
+    width: 95vw;
 }
 
 .twitter-logo,
@@ -158,16 +234,28 @@ header {
         grid-column-end: -3;
     }
 
-    .main-content {
-
-        
-    } 
-
 .container {
         grid-template-columns: 55px 1fr;
         grid-template-areas: 
             "header header"
             "sidebar main-content";
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;    
+    } 
+
+    .traffic{
+        grid-column-gap: 1 / span 2;
+    }
+
+    .widget-container-full, 
+    .widget-container-half {
+        width: 90vw;
+    }
+
+    .widget-container-half {
+        width: 45vw;
     }
 }
 
