@@ -1,4 +1,19 @@
+//Store alert div
 const alertBanner = document.querySelector(".alert");
+//Store canvas element('traffic-chart')
+const trafficChart = document.querySelector('#traffic-chart');
+console.log(trafficChart);
+//Object containing traffic chart data.
+let traffic = {
+    labels: [],
+    datasets: [{
+        data: [],
+        backgroundColor: '#777',
+        borderwidth: 2,
+    }],
+};
+
+
 //Fuction that gives content to the alert div in the htmll
 const callAlertBanner = () => {
     //Creates the html for alert.
