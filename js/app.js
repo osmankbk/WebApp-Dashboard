@@ -1,11 +1,32 @@
 //Store alert div
 const alertBanner = document.querySelector(".alert");
 //Store canvas element('traffic-chart')
-//const trafficChart = document.querySelector('#traffic-chart');
-
-
-//Object containing traffic chart data.
 const trafficCanvas = document.querySelector('#traffic-chart');
+//Store canvas element('daily-chart')
+const dailyCanvas = document.querySelector('.daily-chart');
+//Store canvas element('mobile-chart')
+const mobileCanvas = document.querySelector('.mobile-chart');
+
+//Fuction that gives content to the alert div in the htmll
+const callAlertBanner = () => {
+    //Creates the html for alert.
+    alertBanner.innerHTML = `<div class="alert-banner">
+    <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
+    to complete</p>
+    <p class="alert-banner-close">x</p>
+  </div>`
+}
+callAlertBanner();
+//Click event delegation for alert banner.
+alertBanner.addEventListener('click', (e) => {
+    const element = e.target;
+    if(element.classList.contains("alert-banner-close")){
+        alertBanner.style.display = 'none';
+    }
+});
+
+
+//Objects containing traffic chart data.
 let trafficData = {
   labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
   datasets: [{
@@ -30,26 +51,41 @@ let trafficOptions = {
     display: false
   }
 };
+//Creates a new traffic chart
 let trafficChart = new Chart(trafficCanvas, {
   type: 'line',
   data: trafficData,
   options: trafficOptions
 });
 
-//Fuction that gives content to the alert div in the htmll
-const callAlertBanner = () => {
-    //Creates the html for alert.
-    alertBanner.innerHTML = `<div class="alert-banner">
-    <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks
-    to complete</p>
-    <p class="alert-banner-close">x</p>
-  </div>`
-}
-callAlertBanner();
+//Objects containing daily chart data.
+​// data for daily traffic bar chart
+const dailyData = {
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: 'rgb(151, 78, 151)',
+        boarderWidth: 1
+    }]
+};
 
-alertBanner.addEventListener('click', (e) => {
-    const element = e.target;
-    if(element.classList.contains("alert-banner-close")){
-        alertBanner.style.display = 'none';
+const dailyOptions = {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true 
+            }
+        }]
+    },
+    legend: {
+        display: false
     }
+}
+
+//Creates a new daily chart.
+let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
 });
