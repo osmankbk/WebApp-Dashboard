@@ -30,7 +30,6 @@ header {
 }
 
 .appNicon {
-    max-width: 75%;
     display: flex;
     align-items: center;
     width: 45%;
@@ -46,7 +45,6 @@ header {
 }
 
 .nameNavatar{
-    max-width: 210px;
     display: flex;
     width: 150px;
     align-items: center;
@@ -118,10 +116,12 @@ header {
 
 .header-search-div {
     background-color: lightgray;
+    border-radius: 5px;
 }
 .header-search-div input {
     margin: 18px 0 10px 46%;
     width: 50%;
+    height: 30px;
     border-radius: 5px;
     outline: none;
 }
@@ -154,10 +154,6 @@ header {
 /* ============================================= */
 /*              Traffic Section styles           */
 /* ============================================= */
-/* .traffic {
-    display: grid;
-    grid-column: 1 / span 2;
-} */
 
 .traffic-header {
     display: grid;
@@ -192,6 +188,24 @@ header {
 .widget-container-half {
     width: 95vw;
 }
+
+
+/* ============================================= */
+/*              Social Section styles           */
+/* ============================================= */
+
+.social-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, max-content));
+    justify-content: space-around;
+    border: solid 2px red;
+
+}
+
+.social-status {
+    border: solid 2px red;
+}
+
 
 .twitter-logo,
 .google-logo {
@@ -286,9 +300,6 @@ header {
         width: 45vw;
     }
 
-    .widget-container-half {
-        width: 45vw;
-    }
 }
 
 @media (min-width: 1024px) {
