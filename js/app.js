@@ -59,7 +59,7 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 //Objects containing daily chart data.
-​// data for daily traffic bar chart
+
 const dailyData = {
     labels: ["S", "M", "T", "W", "T", "F", "S"],
     datasets: [{
@@ -83,9 +83,41 @@ const dailyOptions = {
     }
 }
 
-//Creates a new daily chart.
 let dailyChart = new Chart(dailyCanvas, {
     type: 'bar',
     data: dailyData,
     options: dailyOptions
 });
+
+//Object containing data for mobile charts
+const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+        label: '# of Users',
+        data: [2000, 550, 500],
+        borderWidth: 0,
+        backgroundColor: [
+            '#7477BF',
+            '#78CF82',
+            '#51B6C8'
+        ]
+    }]
+};
+
+const mobileOptions = {
+    legend: {
+        position: 'right',
+        labels: {
+            boxWidth: 20,
+            fontstyle: 'bold'
+        }
+    }
+}
+
+//Creates a new mobile chart.
+let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+});
+
