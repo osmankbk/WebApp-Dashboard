@@ -97,9 +97,9 @@ const mobileData = {
         data: [2000, 550, 500],
         borderWidth: 0,
         backgroundColor: [
-            '#7477BF',
-            '#78CF82',
-            '#51B6C8'
+            'purple',
+            'rgb(233, 186, 233)',
+            'rgb(151, 78, 151)',
         ]
     }]
 };
