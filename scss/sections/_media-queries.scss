@@ -9,4 +9,29 @@
             "header header"
             "sidebar main-content";
     }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .traffic,
+    .social-status {
+        grid-column: 1 / 3;
+    }
+
+    .daily,
+    .new-members,
+    .message {
+        grid-column: 1 / 2;
+    }
+    
+    .mobile-users,
+    .recent-activity,
+    .settings {
+        grid-column: 2 / 3;
+    }
+}
+
+@media (min-width: 1024px) {
+    
 }
