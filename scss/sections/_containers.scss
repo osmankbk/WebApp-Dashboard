@@ -6,15 +6,28 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
+    grid-template-areas: 
+        "header"
+        "sidebar"
+        "main-content";
 }
 
 header {
     background-color: red;
+    grid-area: header;
 }
 .sidebar-nav {
     background-color: blue;
+    grid-row: sidebar;
 }
 
 .main-content {
+    display: grid;
     background-color: green;
+    grid-area: main-content;
+}
+
+.widget-container-full, 
+.widget-container-half {
+    width: 95vw;
 }
