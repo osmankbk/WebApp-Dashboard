@@ -1,0 +1,12 @@
+/* ============================================= */
+/*              Media Queries styles              */
+/* ============================================= */
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+            "header header"
+            "sidebar main-content";
+    }
+}
