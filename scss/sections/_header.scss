@@ -2,13 +2,48 @@
 /*              Header styles            */
 /* ============================================= */
 
-.bell {
-    width: 20px;
-    height: 20px;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        margin-left: 20px;
+    }
+
+    h3 {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
 }
 
-#avatar {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+.bellIcon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1.5;
+    margin-right: 20px;
+
+    .bell {
+        width: 20px;
+        height: 20px;
+    }
+
 }
+
+.avatar-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-left: solid 1px black;
+
+    #avatar {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        margin-left: 20px;
+    }
+}
+
+
+
