@@ -1,0 +1,20 @@
+/* ============================================= */
+/*              Body Container styles            */
+/* ============================================= */
+
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+header {
+    background-color: red;
+}
+.sidebar-nav {
+    background-color: blue;
+}
+
+.main-content {
+    background-color: green;
+}
