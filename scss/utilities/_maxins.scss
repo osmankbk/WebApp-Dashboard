@@ -1,0 +1,7 @@
+@mixin flexDisplay {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    flex-grow: 1;
+}
