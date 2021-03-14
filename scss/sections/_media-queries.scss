@@ -1,12 +1,12 @@
 /* ============================================= */
-/*              Media Queries styles              */
+/*              Media Queries styles             */
 /* ============================================= */
 
 @media (min-width: 768px) {
     .container {
         grid-template-columns: 55px 1fr;
         grid-template-areas: 
-            "header header"
+            "head head"
             "sidebar main-content";
     }
 
@@ -29,6 +29,25 @@
     .recent-activity,
     .settings {
         grid-column: 2 / 3;
+    }
+
+    .widget-container-full {
+        width: 90vw;
+    }
+
+    .widget-container-half {
+        width: 45vw;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 20px;
+
+        a {
+            margin-top: 30px;
+        }
     }
 }
 
