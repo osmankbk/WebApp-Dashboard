@@ -2,13 +2,21 @@
 /*              Traffic Section styles           */
 /* ============================================= */
 
-.traffic-header {
-    display: flex;
-    align-items: center;
-
-    h3 {
-        margin-left: 20px;
+.traffic {
+    display: grid;
+    grid-column: 1 / 3;
+    border-bottom: solid 2px grey;
+    
+    &-header {
+        display: flex;
+        align-items: center;
+    
+        h3 {
+            margin-left: 20px;
+        }
     }
+    
+
 }
 
 .traffic-nav {   

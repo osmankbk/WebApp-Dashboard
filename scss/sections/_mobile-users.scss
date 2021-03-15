@@ -1,3 +1,18 @@
+/* ============================================= */
+/*              Mobile Section styles             */
+/* ============================================= */
+
+
 .mobile-users {
     grid-column: 1 / 3;
+    border-top: solid 2px grey;
+
+    h3 {
+        margin-left: 20px;
+    }
+    
+    .widget-container-half {
+        width: 95vw;
+        margin: auto;
+    }
 }
