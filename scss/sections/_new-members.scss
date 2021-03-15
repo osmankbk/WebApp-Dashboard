@@ -4,9 +4,50 @@
 
 
 .new-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column: 1 / 3;
+    border-top: solid 2px gray;
     
-    .members-1 {
-        margin-left: 100px;
+    // .members-1 {
+    //     margin-left: 100px;
+    // }
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        & > div {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-column-gap: -50px;
+
+            p {
+                color: purple;
+                margin-top: 5px;
+            }
+        }
     }
+}
+
+a {
+    color: purple;
+    margin-top: -15px;
+
+    &:hover {
+        color: rgb(233, 186, 233);
+    }
+}
+
+.pics {
+    width: 3em;
+    border-radius: 50%;
+}
+
+.date {
+    color: purple;
+    margin-bottom: 40px;
 }
