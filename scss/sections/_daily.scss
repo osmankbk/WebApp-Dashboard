@@ -5,7 +5,8 @@
 .daily-traffic{
     grid-column: 1 / 3;
     h3 {
-        margin-left: 20px;
+        align-self: center;
+        text-align: center;
     }
     .widget-container-half {
         width: 95vw;
