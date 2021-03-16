@@ -3,5 +3,39 @@
 /* ============================================= */
 
 .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column: 1 / 3;
+
+    h3 {
+        margin-bottom: 30px;
+    }
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    input {
+        margin: 0 10px 20px 10px;
+        border-radius: 5px;
+        height: 2em;
+        
+    }
+
+    textarea {
+        margin: 0 10px 10px 10px;
+        border-radius: 5px;
+        height: 6em;
+    }
+
+    button {
+        margin: 0 10px 10px 10px;
+        background-color: purple;
+        color: white;
+        height: 2em;
+        border-radius: 5px;
+    }
 }
