@@ -1,0 +1,23 @@
+/* ============================================= */
+/*              Setting styles                   */
+/* ============================================= */
+
+.setings-set {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1 / 3;
+    border: solid 2px red;
+
+    .saveNcancle-div {
+        
+    }
+}
+
+.toggle-switch {
+    background-color: red;
+}
+
+.save {
+
+}
