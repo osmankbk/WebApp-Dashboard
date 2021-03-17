@@ -1,50 +1,98 @@
 /* ============================================= */
 /*              Setting styles                   */
 /* ============================================= */
-%both {
-    color: white;
-    margin-top: 10px;
-}
+// %both {
+//     color: white;
+//     margin-top: 10px;
+// }
 .setings-set {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-top: solid 2px gray;
+    background-color: whitesmoke;
     grid-column: 1 / 3;
+
+    @media (min-width: 768px) {
+        margin-top: 20px;
+    }
 
     .toggle-switch {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
-    
-        .switch-ios {
-            text-align: center;
-            margin: 10px;
+
+        @media (min-width: 768px) {
+            display: flex;
+
+            .main-span {
+                width: 20%;
+                margin-left: auto;
+            }
         }
     }
+}
 
-    #timezone {
-        width: 90%;
-        height: 2em;
+.switch-ios {
+    text-align: center;
+    margin: 10px;
+
+    @media (min-width: 768px) {
+        display: flex;
+        width: 50%;
+        margin-left: 20px;
+    }
+}
+
+.notification,
+.public {
+    @media (min-width: 768px) {
+        text-align: left;
+        padding-top: 5px;
         color: purple;
-        border-radius: 5px;
+        width: 50%;
+    }
+}
+
+#timezone {
+    width: 95%;
+    height: 2em;
+    color: purple;
+    border-radius: 5px;
+}
+
+.setings-set h3 {
+    @media (min-width: 768px) {
+        align-self: flex-start;
+        margin-left: 20px;
     }
 }
 
 .saveNcancle-div {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 90%;
+    margin-top: 35px;
+    width: 95%;
 
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
     .cancle,
     .save {
         color: white;
         margin-top: 10px;
         background-color: purple;
         border-radius: 5px;
+
+        @media (min-width: 768px) {
+            width: 48%;
+            height: 90%;
+            margin-bottom: 10px;
+        }
     }
 }
 

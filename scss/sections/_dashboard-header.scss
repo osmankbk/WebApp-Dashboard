@@ -48,6 +48,11 @@
     margin-left: 10px;
     margin-right: 10px;
 
+    p,
+    strong {
+        color: white;
+    }
+
     &-banner {
         display: flex;
         justify-content: space-between;
