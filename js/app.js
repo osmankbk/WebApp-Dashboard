@@ -6,6 +6,29 @@ const trafficCanvas = document.querySelector('#traffic-chart');
 const dailyCanvas = document.querySelector('.daily-chart');
 //Store canvas element('mobile-chart')
 const mobileCanvas = document.querySelector('.mobile-chart');
+//Store notifications div
+const notifications = document.querySelector('#notifications');
+
+const seeNotifications = () => {
+  notifications.innerHTML = `<div class="notification-sub">
+  <div class="messages">
+  <p>You have 6 unread messages</p>
+  <p>x</p>
+  </div>
+
+  <div class="followers">
+  <p>You have e new followers</p>
+  <p>x</p>
+  </div>
+
+  <div class="password">
+  <p>Your password expires in 7 days</p>
+  <p>x</p>
+  </div> 
+  </div>`
+}
+seeNotifications();
+
 
 //Fuction that gives content to the alert div in the htmll
 const callAlertBanner = () => {
