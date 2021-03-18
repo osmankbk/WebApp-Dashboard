@@ -1,5 +1,5 @@
 /* ============================================= */
-/*              Header styles            */
+/*              Header styles                    */
 /* ============================================= */
 
 header {
@@ -34,7 +34,6 @@ header {
     justify-content: flex-end;
     flex-grow: 1.5;
     margin-right: 10px;
-
     .bell {
         width: 20px;
         height: 20px;
@@ -58,4 +57,62 @@ header {
 }
 
 
+/* ============================================= */
+/*              Notifications styles             */
+/* ============================================= */
 
+#notifications {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: lightgreen;
+
+    &:hover {
+        .notification-sub {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.notification-sub {
+    display: none;
+}
+
+.messages {
+    display: flex;
+    width: 14.5em;
+    margin-top: 23px;
+    background-color: lighten(purple, 5%);
+    justify-content: space-between;
+    border-bottom: solid 1px whitesmoke;
+    
+    p {
+        color: white;
+    }
+}
+
+.followers {
+    display: flex;
+    width: 14.5em;
+    background-color: lighten(purple, 5%); 
+    justify-content: space-between;
+    border-bottom: solid 1px whitesmoke;
+    
+    p {
+        color: white;
+    }
+}
+
+.password {
+    display: flex; 
+    width: 14.5em;
+    background-color: lighten(purple, 5%);
+    justify-content: space-between;
+    border-bottom: solid 1px whitesmoke;
+    
+    p {
+        color: white;
+    }
+}
