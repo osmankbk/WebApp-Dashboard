@@ -26,7 +26,6 @@
         align-items: center;
         background-color: whitesmoke;
         width: 90%;
-        border-bottom: solid 1px gray;
 
         @media (min-width: 768px) {
             flex-direction: row;
@@ -52,7 +51,11 @@
     }
 }
 
-
+.member-1,
+.member-2,
+.member-3 {
+    border-bottom: solid 1px gray;
+}
 
 a {
     color: purple;
