@@ -11,33 +11,26 @@
     }
 
     .main-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .traffic,
-    .social-status {
-        grid-column: 1 / 3;
+    .social-status,
+    .new-members,
+    .recent-activity {
+        flex-basis: 100%;
+        height: initial;
     }
 
     .daily-traffic,
-    .new-members,
-    .message {
-        grid-column: 1 / 2;
-    }
-    
+    .message, 
     .mobile-users,
-    .recent-activity,
     .setings-set {
-        grid-column: 2 / 3;
+        flex-basis: 50%;
+
     }
 
-    .widget-container-full {
-        width: 90vw;
-    }
-
-    .widget-container-half {
-        width: 45vw;
-    }
 
     .sidebar-nav {
         display: flex;
@@ -52,5 +45,8 @@
 }
 
 @media (min-width: 1024px) {
-    
+    .new-members,
+    .recent-activity {
+        flex-basis: 50%;
+    }
 }
