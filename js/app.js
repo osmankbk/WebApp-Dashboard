@@ -8,29 +8,64 @@ const dailyCanvas = document.querySelector('.daily-chart');
 const mobileCanvas = document.querySelector('.mobile-chart');
 //Store notifications div
 const notifications = document.querySelector('#notifications');
+//Bell SVG
+const bell = document.querySelector('.bell');
+const container = document.querySelector('.container');
 
+
+
+
+//Function that gives content to the alert div in the htmll
 const seeNotifications = () => {
   notifications.innerHTML = `<div class="notification-sub">
   <div class="messages">
-  <p>You have 6 unread messages</p>
-  <p>x</p>
+    <p>You have 6 unread messages</p>
+    <p class="close">x</p>
   </div>
 
   <div class="followers">
-  <p>You have e new followers</p>
-  <p>x</p>
+    <p>You have one new follower</p>
+    <p class="close">x</p>
   </div>
 
   <div class="password">
-  <p>Your password expires in 7 days</p>
-  <p>x</p>
+    <p>Your password expires in 7 days</p>
+    <p class="close">x</p>
   </div> 
   </div>`
+  return notifications;
 }
+//Call seeNotifications function to populate the notifications div on load.
 seeNotifications();
+//Store notification message container in notification
+const notification = document.querySelector('.notification-sub');
 
 
-//Fuction that gives content to the alert div in the htmll
+//Click event on container
+notification.addEventListener('click', (e) => {
+  const element = e.target;
+  if (element.classList.contains('close')) {
+      element.parentNode.remove();
+  }
+});
+
+//Click event displaying messages & hiding(make it transparent) the notification div.
+bell.addEventListener('click', () => {
+  notification.style.display = 'block';
+  notification.classList.add('showing');
+  notifications.style.backgroundColor = 'transparent';
+});
+
+
+// window.addEventListener('click', (e) => {
+//   if(notification.classList.contains('showing')) {
+//     console.log(e.target);
+//     notification.style.display = 'none';
+//   }
+// });
+
+
+//Function that gives content to the alert div in the htmll
 const callAlertBanner = () => {
     //Creates the html for alert.
     alertBanner.innerHTML = `<div class="alert-banner">
