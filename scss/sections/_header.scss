@@ -107,7 +107,7 @@ header {
   .alert-banner-close {
       transition: transform .3s ease-in-out;
       &:hover {
-          cursor: pointer;
+          cursor: default;
           transform: scale(3);
       }
   }
