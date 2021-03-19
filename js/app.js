@@ -1,3 +1,5 @@
+//Get required elements
+
 //Store alert div
 const alertBanner = document.querySelector(".alert");
 //Store notifications div
@@ -6,6 +8,22 @@ const notifications = document.querySelector('#notifications');
 const bell = document.querySelector('.bell');
 //Store traffic-nav
 const trafficNav = document.querySelector('.traffic-nav');
+//Users info
+const userInfo = ['Victoria Chambers', 'Josh Camron', 'Alyssa Finn', 'Readdy Yung', 'Caprice Laws', 'Adam Gouveia', 'Arminata Kamara'];
+//Form input
+const input = document.querySelector('#message-form');
+//list container
+const usersContainer = document.querySelector('.suggest-list');
+//Form input
+const formInput = document.querySelector('.message-form');
+//Store textarea
+const textArea = document.querySelector('.message-area');
+//Form button
+const formButton = document.querySelector('.message-button');
+const form = document.querySelector('.message-container');
+
+
+
 
 
 //Traffic click event that gives the selected class to a clicked li.
@@ -92,23 +110,20 @@ alertBanner.addEventListener('click', (e) => {
     }
 });
 
+//Message submit section
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if(!input.value || !textArea.value) {
+    alert("Aren't you missing something? Make sure you select a user and type a message");
+  } else {
+    alert("Your message has been submitted!");
+  }
+})
+
+
 
 //Auto complete section
-//Get required elements
-//Users info
-const userInfo = ['Victoria Chambers', 'Josh Camron', 'Alyssa Finn', 'Readdy Yung', 'Caprice Laws', 'Adam Gouveia', 'Arminata Kamara'];
-//Form input
-const input = document.querySelector('#message-form');
-//list container
-const usersContainer = document.querySelector('.suggest-list');
-//Form input
-const formInput = document.querySelector('.message-form');
-//Appended li elements
-
-
-
-
-
 //If key up
 input.addEventListener('keyup', (e) => {
   //Store input typed users
