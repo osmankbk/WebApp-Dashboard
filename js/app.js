@@ -10,8 +10,21 @@ const mobileCanvas = document.querySelector('.mobile-chart');
 const notifications = document.querySelector('#notifications');
 //Bell SVG
 const bell = document.querySelector('.bell');
-const container = document.querySelector('.container');
+//Store traffic-nav
+const trafficNav = document.querySelector('.traffic-nav');
 
+
+//Traffic click event that gives the selected class to a clicked li.
+trafficNav.addEventListener('click', (e) => {
+  if(e.target.tagName = 'LI') {
+    const trafficLi = trafficNav.querySelectorAll('li');
+    trafficLi.forEach(li => {
+      li.classList.remove('selected');
+      e.target.classList.add('selected');
+    });
+   
+  }
+});
 
 
 
