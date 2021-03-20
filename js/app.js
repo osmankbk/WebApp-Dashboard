@@ -26,17 +26,17 @@ const form = document.querySelector('.message-container');
 
 
 
-//Traffic click event that gives the selected class to a clicked li.
-trafficNav.addEventListener('click', (e) => {
-  if(e.target.tagName = 'LI') {
-    const trafficLi = trafficNav.querySelectorAll('li');
-    trafficLi.forEach(li => {
-      li.classList.remove('selected');
-      e.target.classList.add('selected');
-    });
+// //Traffic click event that gives the selected class to a clicked li.
+// trafficNav.addEventListener('click', (e) => {
+//   if(e.target.tagName = 'LI') {
+//     const trafficLi = trafficNav.querySelectorAll('li');
+//     trafficLi.forEach(li => {
+//       li.classList.remove('selected');
+//       e.target.classList.add('selected');
+//     });
    
-  }
-});
+//   }
+// });
 
 
 
