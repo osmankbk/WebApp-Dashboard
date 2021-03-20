@@ -26,20 +26,6 @@ const form = document.querySelector('.message-container');
 
 
 
-// //Traffic click event that gives the selected class to a clicked li.
-// trafficNav.addEventListener('click', (e) => {
-//   if(e.target.tagName = 'LI') {
-//     const trafficLi = trafficNav.querySelectorAll('li');
-//     trafficLi.forEach(li => {
-//       li.classList.remove('selected');
-//       e.target.classList.add('selected');
-//     });
-   
-//   }
-// });
-
-
-
 //Function that gives content to the alert div in the htmll
 const seeNotifications = () => {
   notifications.innerHTML = `<div class="notification-sub">
@@ -144,19 +130,16 @@ input.addEventListener('keyup', (e) => {
 });
 //Append user's input to ul element if any.
 const showUsers = (list) => {
-  let liForUl = list.join('');
-  if(!list.length) {
-    usersContainer.innerHTML = ``;
-  } else {
-    usersContainer.innerHTML = liForUl;
-//Select all li attach a click event to each    
-    const ulChildren = usersContainer.querySelectorAll('li');
-    ulChildren.forEach(li => {
-      li.addEventListener('click', (e) => {
-//When click the become the input text content        
+    const liForUl = !list.length ? `` : 
+      list.join('');
+      usersContainer.innerHTML = liForUl;
+//Select all li attach a click event to each  
+      const ulChildren = usersContainer.querySelectorAll('li');
+      ulChildren.forEach(li => {
+        li.addEventListener('click', (e) => {
+//When click the become the input text content 
         formInput.value = li.textContent;
         usersContainer.style.display = 'none';
-      })
-    })
-  }
+      });
+    });
 }

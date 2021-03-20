@@ -4,23 +4,61 @@ const trafficCanvas = document.querySelector('#traffic-chart');
 const dailyCanvas = document.querySelector('.daily-chart');
 //Store canvas element('mobile-chart')
 const mobileCanvas = document.querySelector('.mobile-chart');
-const allData = [200, 800, 2000, 1200, 1800, 500, 400, 170, 2000, 700, 100]
+
 
 trafficNav.addEventListener('click', (e) => {
     if(e.target.tagName === 'LI') {
       const trafficLi = trafficNav.querySelectorAll('li');
-      trafficLi.forEach(li => {
+      trafficLi.forEach((li, index) => {
         li.classList.remove('selected');
         e.target.classList.add('selected');
+        // switch(e.target.className){
+        //     case 'daily': 
+        //      //Creates a new traffic chart
+        //       trafficChart = new Chart(trafficCanvas, {
+        //       type: 'line',
+        //       data: trafficDataDaily,
+        //       options: trafficOptions
+        //       });
+        //     break;
+        //   }
+        if(e.target.classList.contains('daily')) {
+           //Creates a new traffic chart
+            trafficChart = new Chart(trafficCanvas, {
+              type: 'line',
+              data: trafficDataDaily,
+              options: trafficOptions
+          });
+        } else if(e.target.classList.contains('monthly')) {
+              //Creates a new traffic chart
+              rafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: trafficDataMonthly,
+                options: trafficOptions
+            });
+        } else if (e.target.classList.contains('weekly')) {
+              //Creates a new traffic chart
+              rafficChart = new Chart(trafficCanvas, {
+                type: 'line',
+                data: trafficDataWeekely,
+                options: trafficOptions
+              });
+        } else if (e.target.classList.contains('hourly')) {
+              //Creates a new traffic chart
+              rafficChart = new Chart(trafficCanvas, {
+                  type: 'line',
+                  data: trafficDataHourly,
+                  options: trafficOptions
+                });
+        }
       });
-     
     }
   });
 
 
 
 //Objects containing traffic chart data.
-let trafficData = {
+let trafficDataMonthly = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
@@ -28,10 +66,42 @@ let trafficData = {
       borderWidth: 1,
     }]
   };
+
+//Objects containing traffic chart data.
+let trafficDataDaily = {
+  labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T", "W"],
+  datasets: [{
+    data: [2500, 2000, 700, 2500, 1000, 1200, 000, 2000, 2500, 900, 2500],
+    backgroundColor: 'purple',
+    borderWidth: 1,
+  }]
+};
+
+//Objects containing traffic chart data.
+let trafficDataHourly = {
+  labels: ["12AM", "4AM", "6AM", "8AM", "10AM", "12PM", "2PM", "4PM", "8PM", "10PM", "11PM"],
+  datasets: [{
+    data: [300, 2000, 200, 2000, 500, 1200, 6000, 900, 1100, 400, 800],
+    backgroundColor: 'black',
+    borderWidth: 1,
+  }]
+};
+
+//Objects containing traffic chart data.
+let trafficDataWeekely = {
+  labels: ["WK-1", "WK-2", "WK-3", "WK-4", "WK-1", "WK4", "WK-3", "WK-2", "WK-1", "WK-4", "WK-5"],
+  datasets: [{
+    data: [1000, 1600, 900, 1100, 2500, 1200, 1000, 1500, 2000, 1400, 2500],
+    backgroundColor: 'darkred',
+    borderWidth: 1,
+  }]
+};
+
   let trafficOptions = {
     aspectRatio: 2.5,
     animation: {
-      duration: 1000
+      duration: 800,
+      easing: 'easeOutBack'
     },
     scales: {
       yAxes: [{
@@ -47,10 +117,12 @@ let trafficData = {
   //Creates a new traffic chart
   let trafficChart = new Chart(trafficCanvas, {
     type: 'line',
-    data: trafficData,
+    data: trafficDataMonthly,
     options: trafficOptions
   });
   
+console.log(trafficChart.data);
+
   //Objects containing daily chart data.
   
   const dailyData = {
