@@ -6,11 +6,16 @@ const dailyCanvas = document.querySelector('.daily-chart');
 const mobileCanvas = document.querySelector('.mobile-chart');
 const allData = [200, 800, 2000, 1200, 1800, 500, 400, 170, 2000, 700, 100]
 
-const hourlyChart = (chart) => {
-   chart.datasets.forEach(dataset => {
-
-   });  
-}
+trafficNav.addEventListener('click', (e) => {
+    if(e.target.tagName === 'LI') {
+      const trafficLi = trafficNav.querySelectorAll('li');
+      trafficLi.forEach(li => {
+        li.classList.remove('selected');
+        e.target.classList.add('selected');
+      });
+     
+    }
+  });
 
 
 
@@ -46,8 +51,6 @@ let trafficData = {
     options: trafficOptions
   });
   
-  hourlyChart(trafficData);
-  console.log(trafficData.datasets);
   //Objects containing daily chart data.
   
   const dailyData = {
