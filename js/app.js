@@ -153,7 +153,7 @@ const showUsers = (list) => {
 window.addEventListener('load', () => {
   const initValue =  getRecentSettings();
   if(initValue.length) {
-    timeZone.value = getRecentSettings();
+    timeZone.value = initValue;
   }
 });
 
