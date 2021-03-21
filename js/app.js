@@ -9,7 +9,7 @@ const bell = document.querySelector('.bell');
 //Store traffic-nav
 const trafficNav = document.querySelector('.traffic-nav');
 //Users info
-const userInfo = ['Victoria Chambers', 'Josh Camron', 'Alyssa Finn', 'Readdy Yung', 'Caprice Laws', 'Adam Gouveia', 'Arminata Kamara'];
+const userInfo = ['Victoria Chambers', 'Josh Camron', 'Alyssa Finn', 'Readdy Yung', 'Caprice Laws', 'Adam Gouveia', 'Arminata Kamara', 'Osman Kamara'];
 //Form input
 const input = document.querySelector('#message-form');
 //list container
@@ -20,11 +20,14 @@ const formInput = document.querySelector('.message-form');
 const textArea = document.querySelector('.message-area');
 //Form button
 const formButton = document.querySelector('.message-button');
+//Store form
 const form = document.querySelector('.message-container');
-
-
-
-
+//Store toggle buttons
+const timeZone = document.querySelector('#timezone');
+//Store settings save button
+const save = document.querySelector('.save');
+//Store settings cancle button
+const cancle = document.querySelector('.cancle');
 
 //Function that gives content to the alert div in the htmll
 const seeNotifications = () => {
@@ -105,7 +108,7 @@ form.addEventListener('submit', (e) => {
   } else {
     alert("Your message has been submitted!");
   }
-})
+});
 
 
 
@@ -143,3 +146,38 @@ const showUsers = (list) => {
       });
     });
 }
+
+
+
+//Load event that retrieves value from Local storage to time-zone select
+window.addEventListener('load', () => {
+  const initValue =  getRecentSettings();
+  if(initValue.length) {
+    timeZone.value = getRecentSettings();
+  }
+});
+
+//Function that retrieves searches from Local Storage, return an array
+const getRecentSettings = () => {
+  const settings = localStorage.getItem('recentSettings');
+  const timeGot = settings ? JSON.parse(settings) : [];
+  return timeGot;
+}
+
+getRecentSettings();
+
+//Click event that saves settings to storage
+save.addEventListener('click', (e) => {
+  const setting = getRecentSettings();
+  const settingsValue = timeZone.value;
+
+  setting.push(settingsValue);
+  localStorage.setItem('recentSettings', JSON.stringify(setting))
+})
+
+//Click event that deletes settings to storage
+cancle.addEventListener('click', (e) => {
+  localStorage.removeItem('recentSettings');
+  timeZone.selectedIndex = 0;
+});
+
