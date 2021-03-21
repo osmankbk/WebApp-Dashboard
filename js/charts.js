@@ -9,48 +9,49 @@ const mobileCanvas = document.querySelector('.mobile-chart');
 trafficNav.addEventListener('click', (e) => {
     if(e.target.tagName === 'LI') {
       const trafficLi = trafficNav.querySelectorAll('li');
-      trafficLi.forEach((li, index) => {
+      trafficLi.forEach( li => {
         li.classList.remove('selected');
-        e.target.classList.add('selected');
-        // switch(e.target.className){
-        //     case 'daily': 
-        //      //Creates a new traffic chart
-        //       trafficChart = new Chart(trafficCanvas, {
-        //       type: 'line',
-        //       data: trafficDataDaily,
-        //       options: trafficOptions
-        //       });
-        //     break;
-        //   }
-        if(e.target.classList.contains('daily')) {
-           //Creates a new traffic chart
-            trafficChart = new Chart(trafficCanvas, {
+        switch(e.target.className){
+            case 'daily': 
+             //Creates a new traffic chart
+              trafficChart = new Chart(trafficCanvas, {
               type: 'line',
               data: trafficDataDaily,
               options: trafficOptions
-          });
-        } else if(e.target.classList.contains('monthly')) {
-              //Creates a new traffic chart
-              rafficChart = new Chart(trafficCanvas, {
-                type: 'line',
-                data: trafficDataMonthly,
-                options: trafficOptions
-            });
-        } else if (e.target.classList.contains('weekly')) {
-              //Creates a new traffic chart
-              rafficChart = new Chart(trafficCanvas, {
-                type: 'line',
-                data: trafficDataWeekely,
-                options: trafficOptions
               });
-        } else if (e.target.classList.contains('hourly')) {
-              //Creates a new traffic chart
-              rafficChart = new Chart(trafficCanvas, {
-                  type: 'line',
-                  data: trafficDataHourly,
-                  options: trafficOptions
-                });
-        }
+              e.target.classList.add('selected');
+            break;
+
+            case 'hourly': 
+            //Creates a new traffic chart
+             trafficChart = new Chart(trafficCanvas, {
+             type: 'line',
+             data: trafficDataHourly,
+             options: trafficOptions
+             });
+             e.target.classList.add('selected');
+           break;
+
+           case 'weekly': 
+           //Creates a new traffic chart
+            trafficChart = new Chart(trafficCanvas, {
+            type: 'line',
+            data: trafficDataWeekely,
+            options: trafficOptions
+            });
+            e.target.classList.add('selected');
+          break;
+
+          case 'monthly': 
+          //Creates a new traffic chart
+           trafficChart = new Chart(trafficCanvas, {
+           type: 'line',
+           data: trafficDataMonthly,
+           options: trafficOptions
+           });
+           e.target.classList.add('selected');
+         break;
+          }
       });
     }
   });
@@ -120,8 +121,6 @@ let trafficDataWeekely = {
     data: trafficDataMonthly,
     options: trafficOptions
   });
-  
-console.log(trafficChart.data);
 
   //Objects containing daily chart data.
   
