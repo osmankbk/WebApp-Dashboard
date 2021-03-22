@@ -8,11 +8,6 @@
     border-top: solid 2px gray;
     grid-column: 1 / 3;
 
-    @media (min-width: 768px) { 
-        // border-bottom: solid 2px gray;
-
-    }
-
     h3 {
         align-self: center;
         @media (min-width: 768px) { 
