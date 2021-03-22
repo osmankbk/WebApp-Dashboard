@@ -105,7 +105,6 @@ alertBanner.addEventListener('click', (e) => {
 });
 
 //Message submit section
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   if(!input.value || !textArea.value) {
@@ -114,8 +113,6 @@ form.addEventListener('submit', (e) => {
     alert("Your message has been submitted!");
   }
 });
-
-
 
 //Auto complete section
 //If key up
@@ -153,63 +150,44 @@ const showUsers = (list) => {
 }
 
 
-
-//Load event that retrieves value from Local storage to time-zone select
-window.addEventListener('load', () => {
-  const initValue =  getRecentSettings();
-  if(initValue.length) {
-    timeZone.value = initValue;
-  }
-});
-
 //Function that retrieves searches from Local Storage, return an array
 const getRecentSettings = () => {
   const settings = localStorage.getItem('recentSettings');
-  const timeGot = settings ? JSON.parse(settings) : [];
+  const timeGot = settings ? JSON.parse(settings) : {};
   return timeGot;
 }
 
+//Set the time zone to the saved value in localStorage on load.
+timeZone.value = getRecentSettings().times;
+
+
 //Function that retrieves toggle history from Local Storage, return an array
 const getRecentToggle= () => {
-  const toggles = localStorage.getItem('recentToggle');
-  // const toggleGot = toggles ? JSON.parse(toggles) : [];
-  if(toggles) {
-    JSON.parse(toggles);
-    return toggles.checked = true;
-  } else {
-    return [];
-  }
-  // return toggleGot;
+  const getToggle = localStorage.getItem('recentToggle');
+  const toggleGot = getToggle ? JSON.parse(getToggle) : timeZone.selectedIndex = 0;
+  return toggleGot;
 }
 
-getRecentToggle();
+//Set the toggles to the saved values in localStorage on load.
+firstToggleButton.checked = getRecentToggle().first;
+secondToggleButton.checked = getRecentToggle().second;
 
-// Click event that saves toggle to storage
-// firstToggleButton.addEventListener('click', (e) => {
-//   const toggle = getRecentToggle();
-//   const toggled = e.target.checked;
-
-//   toggle.push(toggled);
-//   localStorage.setItem('recentToggle', JSON.stringify(toggled));
-// });
 
 //Click event that saves settings to storage
 save.addEventListener('click', (e) => {
-  const setting = getRecentSettings();
-  const settingsValue = timeZone.value;
+//Time Zones localStorage 
+  const setting = timeZone.value;
+  const settingsValue = {'times': setting};
 
-  if(!setting.length) {
-    setting.push(settingsValue);
-    localStorage.setItem('recentSettings', JSON.stringify(setting))
-  }
+  localStorage.setItem('recentSettings', JSON.stringify(settingsValue));
 
-  //Toggle localStorage
-  const toggle = getRecentToggle();
-  const toggled = firstToggleButton.checked;
+//Toggle buttons localStorage 
+  const firstToggle = firstToggleButton.checked;
+  const secondToggle = secondToggleButton.checked;
+  const toggled = {'first':firstToggle, 'second':secondToggle};
 
-  toggle.push(toggled);
   localStorage.setItem('recentToggle', JSON.stringify(toggled));
-})
+});
 
 //Click event that deletes settings to storage
 cancle.addEventListener('click', (e) => {
@@ -217,10 +195,3 @@ cancle.addEventListener('click', (e) => {
   localStorage.removeItem('recentToggle');
   timeZone.selectedIndex = 0;
 });
-
-// toggle.addEventListener('click', (e) => {
-//   const check = document.querySelector('.toogle');
-//   if(check.checked) {
-//     console.log(e.target);
-//   }
-// });
