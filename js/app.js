@@ -22,13 +22,17 @@ const textArea = document.querySelector('.message-area');
 const formButton = document.querySelector('.message-button');
 //Store form
 const form = document.querySelector('.message-container');
-const toggle = document.querySelector('.switch-light');
-//Store toggle buttons
+//First Toggle input box
+const firstToggleButton = document.querySelector('#first-toggle');
+//Store second toggle button
+const secondToggleButton = document.querySelector('#second-toggle');
+//Select options
 const timeZone = document.querySelector('#timezone');
 //Store settings save button
 const save = document.querySelector('.save');
 //Store settings cancle button
 const cancle = document.querySelector('.cancle');
+
 
 //Function that gives content to the alert div in the htmll
 const seeNotifications = () => {
@@ -165,7 +169,29 @@ const getRecentSettings = () => {
   return timeGot;
 }
 
-getRecentSettings();
+//Function that retrieves toggle history from Local Storage, return an array
+const getRecentToggle= () => {
+  const toggles = localStorage.getItem('recentToggle');
+  // const toggleGot = toggles ? JSON.parse(toggles) : [];
+  if(toggles) {
+    JSON.parse(toggles);
+    return toggles.checked = true;
+  } else {
+    return [];
+  }
+  // return toggleGot;
+}
+
+getRecentToggle();
+
+// Click event that saves toggle to storage
+// firstToggleButton.addEventListener('click', (e) => {
+//   const toggle = getRecentToggle();
+//   const toggled = e.target.checked;
+
+//   toggle.push(toggled);
+//   localStorage.setItem('recentToggle', JSON.stringify(toggled));
+// });
 
 //Click event that saves settings to storage
 save.addEventListener('click', (e) => {
@@ -176,11 +202,19 @@ save.addEventListener('click', (e) => {
     setting.push(settingsValue);
     localStorage.setItem('recentSettings', JSON.stringify(setting))
   }
+
+  //Toggle localStorage
+  const toggle = getRecentToggle();
+  const toggled = firstToggleButton.checked;
+
+  toggle.push(toggled);
+  localStorage.setItem('recentToggle', JSON.stringify(toggled));
 })
 
 //Click event that deletes settings to storage
 cancle.addEventListener('click', (e) => {
   localStorage.removeItem('recentSettings');
+  localStorage.removeItem('recentToggle');
   timeZone.selectedIndex = 0;
 });
 
