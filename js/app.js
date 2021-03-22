@@ -174,5 +174,7 @@ save.addEventListener('click', (e) => {
 cancle.addEventListener('click', (e) => {
 	localStorage.removeItem('recentSettings');
 	localStorage.removeItem('recentToggle');
+	firstToggleButton.checked = false;
+	secondToggleButton.checked = false;
 	timeZone.selectedIndex = 0;
 });
