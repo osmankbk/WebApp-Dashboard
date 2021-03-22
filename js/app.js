@@ -22,6 +22,7 @@ const textArea = document.querySelector('.message-area');
 const formButton = document.querySelector('.message-button');
 //Store form
 const form = document.querySelector('.message-container');
+const toggle = document.querySelector('.switch-light');
 //Store toggle buttons
 const timeZone = document.querySelector('#timezone');
 //Store settings save button
@@ -171,8 +172,10 @@ save.addEventListener('click', (e) => {
   const setting = getRecentSettings();
   const settingsValue = timeZone.value;
 
-  setting.push(settingsValue);
-  localStorage.setItem('recentSettings', JSON.stringify(setting))
+  if(!setting.length) {
+    setting.push(settingsValue);
+    localStorage.setItem('recentSettings', JSON.stringify(setting))
+  }
 })
 
 //Click event that deletes settings to storage
@@ -181,3 +184,9 @@ cancle.addEventListener('click', (e) => {
   timeZone.selectedIndex = 0;
 });
 
+// toggle.addEventListener('click', (e) => {
+//   const check = document.querySelector('.toogle');
+//   if(check.checked) {
+//     console.log(e.target);
+//   }
+// });
