@@ -136,7 +136,7 @@ const showUsers = (list) => {
 		});
 	});
 }
-//Function that retrieves searches from Local Storage, return an array
+//Function that retrieves searches from Local Storage, return an object
 const getRecentSettings = () => {
 	const settings = localStorage.getItem('recentSettings');
 	const timeGot = settings ? JSON.parse(settings) : {};
@@ -144,7 +144,7 @@ const getRecentSettings = () => {
 }
 //Set the time zone to the saved value in localStorage on load.
 timeZone.value = getRecentSettings().times;
-//Function that retrieves toggle history from Local Storage, return an array
+//Function that retrieves toggle history from Local Storage, returns an object
 const getRecentToggle = () => {
 	const getToggle = localStorage.getItem('recentToggle');
 	const toggleGot = getToggle ? JSON.parse(getToggle) : timeZone.selectedIndex = 0;
