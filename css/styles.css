@@ -1452,7 +1452,6 @@ header h3 {
 .new-members > div > div {
   display: grid;
   grid-template-columns: 1fr;
-  grid-column-gap: -50px;
 }
 .new-members > div > div p {
   color: purple;
