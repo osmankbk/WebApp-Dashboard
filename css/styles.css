@@ -1541,7 +1541,7 @@ a:hover {
 }
 
 #last-div {
-  border-bottom: solid 0px gray;
+  border-bottom: none;
 }
 
 .arrow {
