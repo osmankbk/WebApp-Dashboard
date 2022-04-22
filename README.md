@@ -1,6 +1,6 @@
 # WebApp-Dashboard
 
-I built an interactive dashboard for a web application using advanced web techniques including SVG graphics and JavaScript programming. The project involves creating tables, charts, graphics and other user interface components in a manner that promotes interactivity and usability. **HTML** for frame, **CSS** for styling and **JavaScript** for funtionality! Enjoy!
+I built an interactive dashboard for a web application using advanced web techniques including SVG graphics and JavaScript programming. The project involves creating tables, charts, graphics and other user interface components in a manner that promotes interactivity and usability. **HTML** for frame, **SCSS(Sass)** for styling and **JavaScript** for funtionality! Enjoy!
 
 ![screen shot to showcase live version](https://github.com/osmankbk/WebApp-Dashboard/blob/main/images/ss1.png)
 
